@@ -37,8 +37,6 @@ public class Patrol : NPCBaseFSM
             }
         }
         
-        agent.SetDestination(waypoints[currentWaypoint].transform.position);
-
         //// rotate and move towards next waypoint
         //// direction where NPC is going
         //var direction = waypoints[currentWaypoint].transform.position - NPC.transform.position; 

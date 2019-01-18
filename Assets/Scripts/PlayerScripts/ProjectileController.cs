@@ -31,5 +31,10 @@ public class ProjectileController : MonoBehaviour {
             col.gameObject.GetComponent<PlayerStatusManager>().HurtPlayer(projDamage);
             Destroy(gameObject);
         }
+
+        if (col.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
     }
 }

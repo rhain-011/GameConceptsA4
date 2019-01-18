@@ -15,6 +15,7 @@ public class Attack : NPCBaseFSM {
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         NPC.transform.LookAt(opponent.transform.position);
+        agent.SetDestination(opponent.transform.position);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
