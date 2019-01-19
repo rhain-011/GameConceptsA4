@@ -36,7 +36,7 @@ public class Patrol : NPCBaseFSM
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
-        
+        spotLight.color = Color.yellow;
 
         // checks if gameobject has a NavMeshAgent attached to it
         if (agent == null)

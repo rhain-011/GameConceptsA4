@@ -14,7 +14,13 @@ AnimatorController:
     m_DefaultFloat: 100
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
+  - m_Name: CanSeePlayer
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -46,8 +52,9 @@ MonoBehaviour:
   speed: 2
   rotSpeed: 1
   accuracy: 3
-  isPatrolWaiting: 0
-  totalWaitTime: 5
+  spotLight: {fileID: 0}
+  isPatrolWaiting: 1
+  totalWaitTime: 3
   changeDestinationProb: 0.1
   patrolPoints: []
 --- !u!114 &114908783945553494
@@ -68,6 +75,7 @@ MonoBehaviour:
   speed: 2
   rotSpeed: 1
   accuracy: 3
+  spotLight: {fileID: 0}
 --- !u!114 &114976842779608704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,6 +94,7 @@ MonoBehaviour:
   speed: 2
   rotSpeed: 1
   accuracy: 3
+  spotLight: {fileID: 0}
 --- !u!1101 &1101128218026863100
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -94,9 +103,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: distance
-    m_EventTreshold: 12
+  - m_ConditionMode: 1
+    m_ConditionEvent: CanSeePlayer
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102374874910850876}
   m_Solo: 0
@@ -119,8 +128,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: distance
+  - m_ConditionMode: 2
+    m_ConditionEvent: CanSeePlayer
     m_EventTreshold: 10
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102686481542958140}
@@ -144,8 +153,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: distance
+  - m_ConditionMode: 1
+    m_ConditionEvent: CanSeePlayer
     m_EventTreshold: 10
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102978298395533818}
@@ -169,9 +178,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: distance
-    m_EventTreshold: 12
+  - m_ConditionMode: 2
+    m_ConditionEvent: CanSeePlayer
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102978298395533818}
   m_Solo: 0
