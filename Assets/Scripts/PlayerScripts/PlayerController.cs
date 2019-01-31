@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public float defaultMoveSpeed = 4.0f;
     public float moveSpeed = 4.0f;
     public Rigidbody rb;
-
+    public float defaultMoveSpeed = 4.0f;
     private Vector3 moveInput;
     private Vector3 moveVelocity;
     private Camera mainCamera; // main camera reference
@@ -18,7 +17,6 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
         mainCamera = FindObjectOfType<Camera>(); // let mainCamera equals to object of type camera
-        moveSpeed = defaultMoveSpeed;
 	}
 	
 	// Update is called once per frame
@@ -35,7 +33,7 @@ public class PlayerController : MonoBehaviour {
         if (groundPlane.Raycast(cameraRay, out rayLength))
         {
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
-            //Debug.DrawLine(cameraRay.origin, pointToLook, Color.black); // TODO delete debug
+            Debug.DrawLine(cameraRay.origin, pointToLook, Color.black); // TODO delete debug
 
             transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
 
